@@ -2,3 +2,4 @@
 # See http://www.debian.org/doc/manuals/maint-guide/modify.en.html#quiltrc
 # Also this may be updated by dpkg-source(1) when making a package.
 
+makefile
