@@ -1,0 +1,6 @@
+msodbcsql (11.0.2270.0-1) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #nnnn
+    <nnnn is the bug number of your ITP>
+
+ -- Michael Gutteridge <mrg@fredhutch.org>  Tue, 07 Apr 2015 15:00:25 -0700
