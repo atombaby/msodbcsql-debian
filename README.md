@@ -1,8 +1,8 @@
-Debian Packaging for Microsoft ODBC Driver
+# Debian Packaging for Microsoft ODBC Driver
 
 This is some real quick work dashed off to enable packaging of the Microsoft ODBC driver for Linux into a .deb
 
-# Use:
+## Use:
 
 * Make sure libssl1.0.0 is installed
 * Download the ODBC driver version 11.0.2270.0
@@ -11,7 +11,7 @@ This is some real quick work dashed off to enable packaging of the Microsoft ODB
 * Clone this repository into newly created directory
 * debuild -us -uc
 
-# Notes:
+## Notes:
 
 * this package does break things pretty bad: installs to /opt, but that's a requirement for the driver to function as the path to some supporting files is hard-coded into the library.
 
@@ -19,7 +19,7 @@ This is some real quick work dashed off to enable packaging of the Microsoft ODB
 
 * this appears to work with the Trusty version of unixODBC (2.2.14p2), though the msodbcsql readme indicates that 2.3.2 is required. YMMV, something will undoubtedly break.  Hoping it might get picked up in backports.
 
-# Disclaimer:
+## Disclaimer:
 
 No guarantees, y'all- might not function, might melt down your data center and turn your dog against you.  It's ugly- help welcomed, I hope to improve this over time.
 
