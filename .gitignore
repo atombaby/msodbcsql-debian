@@ -1,0 +1,5 @@
+*.swp
+files
+msodbcsql.debhelper.log
+msodbcsql.substvars
+msodbcsql/*
