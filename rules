@@ -25,12 +25,6 @@
 #             -DLIBDIR=/usr/lib/$(DEB_HOST_MULTIARCH)
 
 override_dh_shlibdeps:
-	dh_shlibdeps -l/opt/microsoft/msodbcsql/11.0.2270.0/lib --dpkg-shlibdeps-params=--ignore-missing-info
+	#dh_shlibdeps -l/opt/microsoft/msodbcsql/11.0.2270.0/lib --dpkg-shlibdeps-params=--ignore-missing-info
+	dh_shlibdeps -l/opt/microsoft/msodbcsql/11.0.2270.0/lib
 
-
-#dpkg-shlibdeps: error: couldn't find library libcrypto.so.10 needed by debian/msodbcsql/opt/microsoft/msodbcsql/11.0.2270.0/lib/libmsodbcsql-11.0.so.2270.0 (ELF format: 'elf64-x86-64'; RPATH: '')
-#dpkg-shlibdeps: error: couldn't find library libssl.so.10 needed by debian/msodbcsql/opt/microsoft/msodbcsql/11.0.2270.0/lib/libmsodbcsql-11.0.so.2270.0 (ELF format: 'elf64-x86-64'; RPATH: '')
-#dpkg-shlibdeps: warning: /usr/lib/x86_64-linux-gnu/libodbcinst.so.1 has an unexpected SONAME (libodbcinst.so.2)
-#dpkg-shlibdeps: error: no dependency information found for /usr/lib/x86_64-linux-gnu/libodbcinst.so.1 (used by debian/msodbcsql/opt/microsoft/msodbcsql/11.0.2270.0/lib/libmsodbcsql-11.0.so.2270.0)
-#dh_shlibdeps: dpkg-shlibdeps -Tdebian/msodbcsql.substvars debian/msodbcsql/opt/microsoft/msodbcsql/11.0.2270.0/lib/libmsodbcsql-11.0.so.2270.0 debian/msodbcsql/opt/microsoft/msodbcsql/11.0.2270.0/bin/bcp-11.0.2270.0 debian/msodbcsql/opt/microsoft/msodbcsql/11.0.2270.0/bin/sqlcmd-11.0.2270.0 returned exit code 2
-#
