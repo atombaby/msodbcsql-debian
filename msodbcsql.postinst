@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Post-install script for msodbcsql
+
+if [ "${1}" = "configure" ] ; 
+then
+    odbcinst -i -d -f \
+        /opt/microsoft/msodbcsql/11.0.2270.0/etc/msodbcsql.ini
+else
+    exit 0
+fi
+
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Pre-remove script for msodbcsql
+
+if [ "${1}" = "remove" ] ; 
+then
+    odbcinst -u -d -f /etc/odbcinst.ini \
+        -n "ODBC Driver 11 for SQL Server"
+else
+    exit 0
+fi
+
+
