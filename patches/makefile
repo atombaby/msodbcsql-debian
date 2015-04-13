@@ -1,7 +1,7 @@
 --- /dev/null
 +++ b/Makefile
 @@ -0,0 +1,49 @@
-+prefix=$(DESTDIR)/opt/microsoft/msodbcsql/11.0.2270.0
++prefix=/opt/microsoft/msodbcsql/11.0.2270.0
 +bindir=$(prefix)/bin
 +libdir=$(prefix)/lib
 +sysconfdir=$(prefix)/etc
@@ -16,28 +16,28 @@
 +all:
 +
 +install: msodbcsql.ini
-+	install -d $(prefix)
-+	install WARNING $(prefix)
-+	install LICENSE $(prefix)
-+	install -d $(libdir)
-+	ln -s /lib/x86_64-linux-gnu/libssl.so.1.0.0 $(libdir)/libssl.so.10
-+	ln -s /lib/x86_64-linux-gnu/libcrypto.so.1.0.0 $(libdir)/libcrypto.so.10
-+	install lib64/libmsodbcsql-11.0.so.2270.0 $(libdir)
-+	install -d $(bindir)
-+	install bin/bcp-11.0.2270.0 $(bindir)
-+	install bin/sqlcmd-11.0.2270.0 $(bindir)
-+	install -d $(docdir)
-+	tar -C $(docdir) -xz -f docs/en_US.tar.gz
-+	install -d $(prefix)/en_US
-+	install lib64/msodbcsqlr11.rll $(prefix)/en_US
-+	install bin/BatchParserGrammar.dfa $(prefix)/en_US
-+	install bin/BatchParserGrammar.llr $(prefix)/en_US
-+	install bin/bcp.rll $(prefix)/en_US
-+	install bin/SQLCMD.rll $(prefix)/en_US
-+	install -d $(includedir)
-+	install include/msodbcsql.h $(includedir)
-+	install -d $(sysconfdir)
-+	install msodbcsql.ini $(sysconfdir)
++	install -d $(DESTDIR)/$(prefix)
++	install WARNING $(DESTDIR)/$(prefix)
++	install LICENSE $(DESTDIR)/$(prefix)
++	install -d $(DESTDIR)/$(libdir)
++	ln -s /lib/x86_64-linux-gnu/libssl.so.1.0.0 $(DESTDIR)/$(libdir)/libssl.so.10
++	ln -s /lib/x86_64-linux-gnu/libcrypto.so.1.0.0 $(DESTDIR)/$(libdir)/libcrypto.so.10
++	install lib64/libmsodbcsql-11.0.so.2270.0 $(DESTDIR)/$(libdir)
++	install -d $(DESTDIR)/$(bindir)
++	install bin/bcp-11.0.2270.0 $(DESTDIR)/$(bindir)
++	install bin/sqlcmd-11.0.2270.0 $(DESTDIR)/$(bindir)
++	install -d $(DESTDIR)/$(docdir)
++	tar -C $(DESTDIR)/$(docdir) -xz -f docs/en_US.tar.gz
++	install -d $(DESTDIR)/$(prefix)/en_US
++	install lib64/msodbcsqlr11.rll $(DESTDIR)/$(prefix)/en_US
++	install bin/BatchParserGrammar.dfa $(DESTDIR)/$(prefix)/en_US
++	install bin/BatchParserGrammar.llr $(DESTDIR)/$(prefix)/en_US
++	install bin/bcp.rll $(DESTDIR)/$(prefix)/en_US
++	install bin/SQLCMD.rll $(DESTDIR)/$(prefix)/en_US
++	install -d $(DESTDIR)/$(includedir)
++	install include/msodbcsql.h $(DESTDIR)/$(includedir)
++	install -d $(DESTDIR)/$(sysconfdir)
++	install msodbcsql.ini $(DESTDIR)/$(sysconfdir)
 +
 +msodbcsql.ini:
 +	echo "[$(driver_dm_name)]" > msodbcsql.ini
